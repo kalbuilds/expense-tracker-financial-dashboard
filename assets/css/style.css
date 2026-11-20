@@ -236,3 +236,15 @@ body {
   padding: 20px;
   color: #6b7280;
 }
+
+/* spending-category section */
+.spending-category {
+  background-color: white;
+  padding: 20px;
+  margin-top: 15px;
+  border-radius: 10px;
+}
+
+.spending-category h2 {
+  margin: 10px 0;
+}
