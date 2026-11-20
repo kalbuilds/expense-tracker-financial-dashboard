@@ -147,14 +147,14 @@ body {
 }
 
 .add-transaction input {
-  padding: 10px;
+  padding: 13px;
   width: 95%;
   border-radius: 6px;
   border: 1px solid black;
   margin: 5px 0;
 }
 .add-transaction select {
-  padding: 10px;
+  padding: 13px;
   width: 100%;
   border-radius: 6px;
   border: 1px solid black;
@@ -173,4 +173,34 @@ body {
 
 .add-btn:hover {
   background-color: rgb(90, 90, 219);
+}
+
+/* transactions */
+
+.transactions {
+  background-color: white;
+  padding: 20px;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+.transactions h2 {
+  margin-bottom: 10px;
+}
+
+.transactions input {
+  width: 95%;
+  padding: 13px;
+  border: none;
+  border: 1px solid;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+
+.transactions select {
+  width: 100%;
+  padding: 13px;
+  border-radius: 10px;
+  border-radius: 10px;
+  margin: 10px 0;
 }
