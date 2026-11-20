@@ -248,3 +248,31 @@ body {
 .spending-category h2 {
   margin: 10px 0;
 }
+
+/* financial-statistics section */
+
+.financial-statistics {
+  background-color: white;
+  padding: 20px;
+  margin-top: 15px;
+  border-radius: 10px;
+}
+
+.statistics {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+}
+
+.statistics-title {
+  color: #6b7280;
+  margin: 10px;
+}
+
+.financial-statistics h2 {
+  margin: 10px 0;
+}
+
+.value {
+  font-weight: bold;
+}
