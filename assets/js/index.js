@@ -17,13 +17,20 @@ const expenseStatistics = document.getElementById('expense-statistics');
 
 // income - balance - amount
 
+const totalBalanceAmount = document.getElementById('total-balance-amount');
 
-
+let totalIncome = 0;
+let totalExpenses = 0;
 let balance = 0;
 
-let usersArray = JSON.parse(localStorage.getItem('myItems')) || [];
+// let balance = 0;
+
+let usersArray = JSON.parse(localStorage.getItem('usersList')) || [];
 
 addTransactionBtn.addEventListener('click', function () {
+
+
+    const transactionAmount = Number(amount.value);
 
 
 
@@ -46,35 +53,42 @@ addTransactionBtn.addEventListener('click', function () {
         return;
     }
 
+    let balance = amount
+
     const newUser = {
         addTransaction: addTransaction.value,
         date: date.value,
         category: category.value,
-        amount: amount.value,
+        amount: Number(amount.value),
         paymentMethod: paymentMethod.value,
+        type: type.value
     };
 
     console.log(newUser)
 
+
+
     usersArray.push(newUser);
     localStorage.setItem('usersList', JSON.stringify(usersArray));
 
-    if (type.value === "Income") {
-        incomeAmount.textContent = `$ ${amount.value}`
-        incomeStatistics.textContent = `$ ${amount.value}`
+    calculateBalance();
+
+    // if (type.value === "Income") {
+    //     incomeAmount.textContent = `$ ${amount.value}`
+    //     incomeStatistics.textContent = `$ ${amount.value}`
 
 
-    }
+    // }
 
-    if (type.value === "Expense") {
-        incomeAmount.value = 0;
-        expenseStatistics.textContent = `$ ${amount.value}`
-        expenseAmount.textContent = `$ ${amount.value}`
+    // if (type.value === "Expense") {
+    //     incomeAmount.value = 0;
+    //     expenseStatistics.textContent = `$ ${amount.value}`
+    //     expenseAmount.textContent = `$ ${amount.value}`
 
 
-        // balance =  amount.value
+    //     // balance =  amount.value
 
-    }
+    // }
 
 
     console.log(addTransaction.value);
@@ -94,11 +108,33 @@ addTransactionBtn.addEventListener('click', function () {
     // localStorage.setItem('myItems', JSON.stringify(itemsArray));
 
 
-
-
-
-
-
-
 })
 
+function calculateBalance() {
+
+    totalIncome = 0;
+    totalExpenses = 0;
+
+    usersArray.forEach(function (transaction) {
+
+        if (transaction.type === "Income") {
+            totalIncome += Number(transaction.amount);
+        }
+
+        if (transaction.type === "Expense") {
+            totalExpenses += Number(transaction.amount);
+        }
+
+    });
+
+    balance = totalIncome - totalExpenses;
+
+    incomeAmount.textContent = `$ ${totalIncome.toFixed(2)}`;
+
+    expenseAmount.textContent = `$ ${totalExpenses.toFixed(2)}`;
+
+    totalBalanceAmount.textContent = `$ ${balance.toFixed(2)}`;
+
+}
+
+calculateBalance();
