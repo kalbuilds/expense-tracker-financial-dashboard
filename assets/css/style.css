@@ -33,3 +33,50 @@ body {
 }
 
 /* balance section */
+
+.balance-container {
+  border: 3px solid white;
+  padding: 23px;
+  display: grid;
+  grid-template-columns: 13% 1fr;
+  /* place-items: center; */
+  margin-bottom: 17px;
+  background-color: white;
+  border-left-width: 8px;
+  border-left-color: brown;
+  border-radius: 23px;
+}
+
+.monthly {
+  border-left-width: 5px;
+  border-left-color: indigo;
+}
+
+.balance {
+  border-left-width: 5px;
+  border-left-color: rgb(63, 189, 231);
+}
+
+.expense {
+  border-left-width: 5px;
+  border-left-color: red;
+}
+
+.income {
+  border-left-width: 5px;
+  border-left-color: green;
+}
+
+.sign {
+  /* text-align: center; */
+  font-size: 35px;
+}
+
+.balance-name {
+  color: rgb(179, 179, 179);
+}
+
+.balance-amount {
+  font-size: 27px;
+  font-weight: bold;
+}
