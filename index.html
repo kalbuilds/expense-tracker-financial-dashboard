@@ -1,197 +1,207 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <div>
+    <h1>Expense Tracker</h1>
+    <p>Manage your income expenses and budget</p>
+
+    <button>Export CSV</button>
+
+    <div class="balance">
+      <div>Total Income $0.00</div>
+      <div>Total Expenses $0.00</div>
+
+      <div>Balance $0.00</div>
+
+      <div>Monthly Budget $0.00</div>
+    </div>
+
     <div>
-      <h1>Expense Tracker</h1>
-      <p>Manage your income expenses and budget</p>
+      <h2>Monthly Budget</h2>
+      <button>set Budget</button>
 
-      <button>Export CSV</button>
+      <p>Spent: $0.00 <span> Remaining: $0.00 </span> No budget set.</p>
+    </div>
 
-      <div class="balance">
-        <div>Total Income $0.00</div>
-        <div>Total Expenses $0.00</div>
+    <div>
+      <h3>Add Transaction</h3>
 
-        <div>Balance $0.00</div>
+      <label>Description </label>
+      <br />
 
-        <div>Monthly Budget $0.00</div>
-      </div>
+      <input placeholder="e.g Grocery Shopping" />
+      <br />
 
-      <div>
-        <h2>Monthly Budget</h2>
-        <button>set Budget</button>
+      <label>Amount </label>
+      <br />
+      <input placeholder="0.00" />
+      <br />
 
-        <p>Spent: $0.00 <span> Remaining: $0.00 </span> No budget set.</p>
-      </div>
+      <label>Type </label>
+      <br />
+      <select>
+        <option>Expense</option>
 
-      <div>
-        <h3>Add Transaction</h3>
+        <option>Income</option>
+      </select>
+      <br />
 
-        <label>Description </label>
-        <br />
+      <label>Category </label>
+      <br />
+      <select>
+        <option>Food</option>
+        <option>Transport</option>
+        <option>Education</option>
+        <option>Housing</option>
+        <option>Health</option>
+        <option>Entertainment</option>
+        <option>Shopping</option>
+        <option>Utilities</option>
+        <option>Salary</option>
 
-        <input placeholder="e.g Grocery Shopping" />
-        <br />
+        <option>Business</option>
+        <option>Other</option>
+      </select>
 
-        <label>Amount </label>
-        <br />
-        <input placeholder="0.00" />
-        <br />
+      <br />
+      <label>Date </label>
+      <br />
+      <input type="date" placeholder="" />
 
-        <label>Type </label>
-        <br />
-        <select>
-          <option>Expense</option>
+      <br />
+      <label>Payment Method </label>
+      <br />
+      <select>
+        <option>Cash</option>
+        <option>Bank</option>
+        <option>Mobile Money</option>
+        <option>Card</option>
+        <option>Other</option>
+      </select>
+      <br />
+      <button>Add Transaction</button>
+    </div>
 
-          <option>Income</option>
-        </select>
-        <br />
+    <div class="transactions">
+      <h3>Transactions</h3>
+      <label for="">Search</label>
+      <br>
+      <input type="text" placeholder="Search transactions" />
+      <br />
 
-        <label>Category </label>
-        <br />
-        <select>
-          <option>Food</option>
-          <option>Transport</option>
-          <option>Education</option>
-          <option>Housing</option>
-          <option>Health</option>
-          <option>Entertainment</option>
-          <option>Shopping</option>
-          <option>Utilities</option>
-          <option>Salary</option>
+      <label for="">Type</label>
+      <br>
+      <select name="" id="">
+        <option value="">All</option>
+        <option value="">Income</option>
+        <option value=""> Expense</option>
+      </select>
+      <br>
 
-          <option>Business</option>
-          <option>Other</option>
-        </select>
+      <label for="">Category</label>
+      <br>
+      <select name="" id="">
+        <option value="">All Categories</option>
+        <option>Food</option>
+        <option>Transport</option>
+        <option>Education</option>
+        <option>Housing</option>
+        <option>Health</option>
+        <option>Entertainment</option>
+        <option>Shopping</option>
+        <option>Utilities</option>
+        <option>Salary</option>
 
-        <br />
-        <label>Date </label>
-        <br />
-        <input type="date" placeholder="" />
+        <option>Business</option>
+        <option>Other</option>
+      </select>
 
-        <br />
-        <label>Payment Method </label>
-        <br />
-        <select>
-          <option>Cash</option>
-          <option>Bank</option>
-          <option>Mobile Money</option>
-          <option>Card</option>
-          <option>Other</option>
-        </select>
-        <br />
-        <button>Add Transaction</button>
-      </div>
+      <br>
+      <label for=""> Sort By </label>
+      <br>
+      <select name="" id="">
+        <option value=""> Newest First</option>
 
-      <div class="transactions">
-        <h3>Transactions</h3> 
-        <label for="">Search</label>
-        <br>
-        <input type="text" placeholder="Search transactions" />
-        <br />
+        <option value=""> Old First</option>
+        <option value="">Amount: High to Low</option>
+        <option value=""> Amount: Low to High</option>
+        <option value="" Description A-Z</option>
+      </select>
 
-        <label for="">Type</label>
-        <br>
-        <select name="" id="">
-          <option value="">All</option>
-          <option value="">Income</option>
-          <option value=""> Expense</option>
-        </select>
-        <br>
 
-        <label for="">Category</label>
-        <br>
-        <select name="" id="">
-          <option value="">All Categories</option>
-          <option>Food</option>
-          <option>Transport</option>
-          <option>Education</option>
-          <option>Housing</option>
-          <option>Health</option>
-          <option>Entertainment</option>
-          <option>Shopping</option>
-          <option>Utilities</option>
-          <option>Salary</option>
+    </div>
 
-          <option>Business</option>
-          <option>Other</option>
-        </select>
+    <div class="transcation-list" style="margin: 10px;">
+      <table border="2" style="border-collapse: collapse;">
 
-        <br>
-        <label for=""> Sort By     </label>
-        <br>
-          <select name="" id="">
-             <option value=""> Newest First</option>
+        <th>
+          Description
 
-          <option value=""> Old First</option>
-          <option value="">Amount: High to Low</option>
-          <option value=""> Amount: Low to High</option>
-          <option value=""Description A-Z</option>
-          </select>
-         
-   
-      </div>
+        </th>
+        <th>
+          Type
+        </th>
+        <th>
+          Category
+        </th>
+        <th>
+          Amount
+        </th>
+        <th>Date
+        </th>
+        <th>Payment</th>
+        <th>Actions
+        </th>
+        <tr>
+          <td colspan="7">No transactions found.
 
-      <div class="transcation-list" style="margin: 10px;">
-        <table border="2" style="border-collapse: collapse;">
-         
-            <th>
-              Description
+          </td>
+        </tr>
 
-            </th>
-            <th>
-              Type
-            </th>
-            <th>
-              Category
-            </th>
-            <th>
-              Amount
-            </th>
-            <th>Date
-            </th>
-            <th>Payment</th>
-            <th>Actions
-           </th>
-           <tr>
-            <td colspan="7">No transactions found.
-                
-            </td>
-              </tr>
 
-           
-      
-        </table>
 
-      </div>
+      </table>
+
     </div>
 
     <div class="spending-category">
-       <h2>Spending by Category
-       </h2>
-        <p>No expense data available.</p>
+      <h2>Spending by Category
+      </h2>
+      <p>No expense data available.</p>
     </div>
 
     <div class="financial-statistics">
       <h3>Financial Statistics</h3>
       <p>Total Transactions
-<span>0.00</span></p>
+        <span>0.00</span>
+      </p>
       <p>
-Income Transactions
-<span>0.00</span></p>
+        Income Transactions
+        <span>0.00</span>
+      </p>
       <p>Expense Transactions
-<span>0.00</span></p>
+        <span>0.00</span>
+      </p>
       <p>Average Expense
-<span>$0.00</span></p>
+        <span>$0.00</span>
+      </p>
       <p>Highest Expense
-<span>$0.00</span></p>
+        <span>$0.00</span>
+      </p>
       <p>Lowest Expense <span>$0.00</span>
-</p>
+      </p>
 
     </div>
-  </body>
+  </div>
+
+
+</body>
+
 </html>
