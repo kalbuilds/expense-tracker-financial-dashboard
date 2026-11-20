@@ -204,3 +204,35 @@ body {
   border-radius: 10px;
   margin: 10px 0;
 }
+
+/* transcation list section */
+
+.transaction-list {
+  margin: 10px;
+  padding: 16px;
+  overflow-x: auto;
+}
+
+.transaction-list .table {
+  width: 100%;
+  /* border-radius: 10px; */
+  border-collapse: collapse;
+}
+
+.transaction-list th,
+.transaction-list td {
+  border: 1px solid rgb(190, 190, 197);
+  padding: 10px 14px;
+  text-align: left;
+}
+
+.transaction-list th {
+  background-color: #f3f4f6;
+  font-weight: 600;
+}
+
+.transaction-list tbody td[colspan="7"] {
+  text-align: center;
+  padding: 20px;
+  color: #6b7280;
+}
