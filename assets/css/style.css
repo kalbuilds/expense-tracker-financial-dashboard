@@ -80,3 +80,49 @@ body {
   font-size: 27px;
   font-weight: bold;
 }
+
+/* monthly budget */
+.monthly-budget {
+  border: 3px solid white;
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  border: 2px solid white;
+}
+
+.set-budget {
+  display: flex;
+  justify-content: space-between;
+}
+
+.set-btn {
+  padding: 9px 15px;
+  border: 1px solid blue;
+  border-radius: 7px;
+  color: rgb(23, 186, 240);
+  background-color: #fff;
+}
+
+.remaining {
+  font-size: 18px;
+  margin-top: 10px;
+  color: rgb(179, 179, 179);
+  display: flex;
+  justify-content: space-between;
+}
+
+.remaining .balance {
+  color: black;
+}
+
+.status {
+  color: rgb(179, 179, 179);
+}
+
+.percent {
+  margin: 10px;
+  width: 100%;
+  height: 18px;
+  border: 2px solid lightcoral;
+  border-radius: 12px;
+}
