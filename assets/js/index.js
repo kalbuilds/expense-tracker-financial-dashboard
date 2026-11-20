@@ -14,6 +14,7 @@ const expenseAmount = document.getElementById('expense-balance-amount');
 const incomeStatistics = document.getElementById('income-statistics');
 
 const expenseStatistics = document.getElementById('expense-statistics');
+const totalStatistics = document.getElementById('total-statistics');
 
 // income - balance - amount
 
@@ -130,10 +131,13 @@ function calculateBalance() {
     balance = totalIncome - totalExpenses;
 
     incomeAmount.textContent = `$ ${totalIncome.toFixed(2)}`;
+    incomeStatistics.textContent = `$ ${totalIncome.toFixed(2)}`
 
     expenseAmount.textContent = `$ ${totalExpenses.toFixed(2)}`;
+    expenseStatistics.textContent = `$ ${totalExpenses.toFixed(2)}`
 
     totalBalanceAmount.textContent = `$ ${balance.toFixed(2)}`;
+    totalStatistics.textContent = `$ ${balance.toFixed(2)}`;
 
 }
 
