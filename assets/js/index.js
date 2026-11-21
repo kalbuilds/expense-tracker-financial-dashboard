@@ -28,6 +28,9 @@ const totalBalanceAmount = document.getElementById('total-balance-amount');
 
 let totalIncome = 0;
 let totalExpenses = 0;
+
+let totalIncomeNumber = 0;
+let totalExpensesNumber = 0;
 let averageExpenseValue = 0;
 
 let numberTotalExpense = 0;
@@ -35,6 +38,8 @@ let numberTotalExpense = 0;
 let highestExpenseValue = null;;
 let lowestExpenseValue
     = null;;
+
+let totalTransactions = 0;
 
 // let balance = 0;
 
@@ -137,13 +142,14 @@ function calculateBalance() {
 
         if (transaction.type === "Income") {
             totalIncome += Number(transaction.amount);
-            // console.log(numberTotalIncome)
+            totalIncomeNumber++;
 
 
         }
 
         if (transaction.type === "Expense") {
             totalExpenses += Number(transaction.amount);
+            totalExpensesNumber++;
             numberTotalExpense++;
             if (highestExpenseValue === null || transaction.amount > highestExpenseValue) {
                 highestExpenseValue = transaction.amount;
@@ -172,24 +178,25 @@ function calculateBalance() {
 
     balance = totalIncome - totalExpenses;
 
+    totalTransactions = Math.abs(totalIncomeNumber + totalExpensesNumber);
+
     incomeAmount.textContent = `$ ${totalIncome.toFixed(2)}`;
-    incomeStatistics.textContent = `$ ${totalIncome.toFixed(2)}`
+    incomeStatistics.textContent = `$ ${totalIncomeNumber}`
 
     expenseAmount.textContent = `$ ${totalExpenses.toFixed(2)}`;
-    expenseStatistics.textContent = `$ ${totalExpenses.toFixed(2)}`
+    expenseStatistics.textContent = `$ ${totalExpensesNumber}`;
 
     totalBalanceAmount.textContent = `$ ${balance.toFixed(2)}`;
-    totalStatistics.textContent = `$ ${balance.toFixed(2)}`;
+    totalStatistics.textContent = `$ ${totalTransactions}`;
     // if (averageExpense === NaN) {
     //     averageExpense = "$0.00"
 
     // }
 
-
     averageExpense.textContent = `$ ${Number(averageExpenseValue)}`
     if (highestExpense || lowestExpense === null) {
-        highestExpense = "$0.00"
-        lowestExpense = "$0.00"
+        highestExpense.textContent = "$0.00"
+        lowestExpense.textContent = "$0.00"
 
     }
     highestExpense.textContent = `$ ${highestExpenseValue}`
