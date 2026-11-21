@@ -7,14 +7,16 @@ const category = document.getElementById('Category');
 const date = document.getElementById('Date');
 const paymentMethod = document.getElementById('payment-method');
 const incomeAmount = document.getElementById('income-balance-amount');
-
-
 const expenseAmount = document.getElementById('expense-balance-amount');
-
 const incomeStatistics = document.getElementById('income-statistics');
-
 const expenseStatistics = document.getElementById('expense-statistics');
 const totalStatistics = document.getElementById('total-statistics');
+
+const averageExpense = document.getElementById('average-expense');
+
+
+const transactionListData = document.getElementById('transaction-list-data');
+
 
 // income - balance - amount
 
@@ -22,7 +24,9 @@ const totalBalanceAmount = document.getElementById('total-balance-amount');
 
 let totalIncome = 0;
 let totalExpenses = 0;
-let balance = 0;
+let averageExpenseValue = 0;
+
+let numberTotalExpense = 0
 
 // let balance = 0;
 
@@ -33,13 +37,10 @@ addTransactionBtn.addEventListener('click', function () {
 
     const transactionAmount = Number(amount.value);
 
-
-
-
-    console.log(date.value)
-    console.log(type.value);
-    console.log(paymentMethod.value)
-    console.log(category.value)
+    // console.log(date.value)
+    // console.log(type.value);
+    // console.log(paymentMethod.value)
+    // console.log(category.value)
     if (addTransaction.value === "") {
         console.log("Please Enter the correct transaction description")
         return;
@@ -65,7 +66,7 @@ addTransactionBtn.addEventListener('click', function () {
         type: type.value
     };
 
-    console.log(newUser)
+    // console.log(newUser)
 
 
 
@@ -92,8 +93,12 @@ addTransactionBtn.addEventListener('click', function () {
     // }
 
 
-    console.log(addTransaction.value);
+    // usersArray.map((users) => {
+    //     transactionListData.textContent
 
+    // })
+
+    // console.log(addTransaction.value);
 
     addTransaction.value = "";
     amount.value = "";
@@ -115,18 +120,34 @@ function calculateBalance() {
 
     totalIncome = 0;
     totalExpenses = 0;
+    averageExpenseValue = 0;
+    numberTotalExpense = 0;
 
     usersArray.forEach(function (transaction) {
+        console.log(transaction)
 
         if (transaction.type === "Income") {
             totalIncome += Number(transaction.amount);
+            // console.log(numberTotalIncome)
+
+
         }
 
         if (transaction.type === "Expense") {
             totalExpenses += Number(transaction.amount);
+            numberTotalExpense++;
         }
 
+
+
     });
+
+    // console.log(usersArray);
+    // console.log(totalExpenses);
+    averageExpenseValue = totalExpenses / numberTotalExpense;
+
+    console.log(`average ${averageExpenseValue}`);
+    console.log(numberTotalExpense);
 
     balance = totalIncome - totalExpenses;
 
@@ -138,6 +159,8 @@ function calculateBalance() {
 
     totalBalanceAmount.textContent = `$ ${balance.toFixed(2)}`;
     totalStatistics.textContent = `$ ${balance.toFixed(2)}`;
+
+    averageExpense.textContent = `$ ${averageExpenseValue}`
 
 }
 
