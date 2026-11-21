@@ -15,6 +15,10 @@ const totalStatistics = document.getElementById('total-statistics');
 const averageExpense = document.getElementById('average-expense');
 
 
+const highestExpense = document.getElementById('highestExpense-amount');
+const lowestExpense = document.getElementById('lowestExpense-amount');
+
+
 const transactionListData = document.getElementById('transaction-list-data');
 
 
@@ -26,7 +30,11 @@ let totalIncome = 0;
 let totalExpenses = 0;
 let averageExpenseValue = 0;
 
-let numberTotalExpense = 0
+let numberTotalExpense = 0;
+
+let highestExpenseValue = null;;
+let lowestExpenseValue
+    = null;;
 
 // let balance = 0;
 
@@ -123,6 +131,7 @@ function calculateBalance() {
     averageExpenseValue = 0;
     numberTotalExpense = 0;
 
+
     usersArray.forEach(function (transaction) {
         console.log(transaction)
 
@@ -136,15 +145,27 @@ function calculateBalance() {
         if (transaction.type === "Expense") {
             totalExpenses += Number(transaction.amount);
             numberTotalExpense++;
+            if (highestExpenseValue === null || transaction.amount > highestExpenseValue) {
+                highestExpenseValue = transaction.amount;
+            }
+            if (lowestExpenseValue === null || transaction.amount < lowestExpenseValue) {
+                lowestExpenseValue = transaction.amount;
+            }
         }
 
 
 
     });
 
+    console.log("hello")
+
+    console.log(highestExpenseValue);
+
     // console.log(usersArray);
     // console.log(totalExpenses);
-    averageExpenseValue = totalExpenses / numberTotalExpense;
+    averageExpenseValue = Number(totalExpenses) / Number(numberTotalExpense);
+
+
 
     console.log(`average ${averageExpenseValue}`);
     console.log(numberTotalExpense);
@@ -159,8 +180,21 @@ function calculateBalance() {
 
     totalBalanceAmount.textContent = `$ ${balance.toFixed(2)}`;
     totalStatistics.textContent = `$ ${balance.toFixed(2)}`;
+    // if (averageExpense === NaN) {
+    //     averageExpense = "$0.00"
 
-    averageExpense.textContent = `$ ${averageExpenseValue}`
+    // }
+
+
+    averageExpense.textContent = `$ ${Number(averageExpenseValue)}`
+    if (highestExpense || lowestExpense === null) {
+        highestExpense = "$0.00"
+        lowestExpense = "$0.00"
+
+    }
+    highestExpense.textContent = `$ ${highestExpenseValue}`
+    lowestExpense.textContent = `$ ${lowestExpenseValue}`
+
 
 }
 
