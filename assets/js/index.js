@@ -11,20 +11,17 @@ const expenseAmount = document.getElementById('expense-balance-amount');
 const incomeStatistics = document.getElementById('income-statistics');
 const expenseStatistics = document.getElementById('expense-statistics');
 const totalStatistics = document.getElementById('total-statistics');
-
 const averageExpense = document.getElementById('average-expense');
-
-
+const setBudgetBtn = document.getElementById('set-budget');
 const highestExpense = document.getElementById('highestExpense-amount');
 const lowestExpense = document.getElementById('lowestExpense-amount');
-
-
 const transactionListData = document.getElementById('transaction-list-data');
-
-
-// income - balance - amount
-
 const totalBalanceAmount = document.getElementById('total-balance-amount');
+const remainingBudget = document.getElementById('remaining-budget');
+const monthlyBalanceAmount = document.getElementById('monthly-balance-amount');
+const spentBudget = document.getElementById('spent-budget');
+
+
 
 let totalIncome = 0;
 let totalExpenses = 0;
@@ -42,10 +39,27 @@ let lowestExpenseValue
 let totalTransactions = 0;
 
 // let balance = 0;
+let budget;
+let remaingingBudget;
 
 let usersArray = JSON.parse(localStorage.getItem('usersList')) || [];
 
+setBudgetBtn.addEventListener('click', function () {
+
+    budget = prompt("Enter your monthly budget")
+
+
+    remaingingBudget = budget - totalExpenses.toFixed(2);
+    alert("Hello, " + budget);
+    if (budget !== "") {
+        remainingBudget.textContent = `$${remaingingBudget}`;
+        monthlyBalanceAmount.textContent = `$${budget}`;
+    }
+});
+
 addTransactionBtn.addEventListener('click', function () {
+
+
 
 
     const transactionAmount = Number(amount.value);
@@ -179,6 +193,8 @@ function calculateBalance() {
     balance = totalIncome - totalExpenses;
 
     totalTransactions = Math.abs(totalIncomeNumber + totalExpensesNumber);
+
+    spentBudget.textContent = ` $${totalExpenses.toFixed(2)}`;
 
     incomeAmount.textContent = `$ ${totalIncome.toFixed(2)}`;
     incomeStatistics.textContent = `$ ${totalIncomeNumber}`

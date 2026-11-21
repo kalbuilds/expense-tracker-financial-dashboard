@@ -127,6 +127,13 @@ body {
   border-radius: 12px;
 }
 
+.remaining-balance {
+  display: flex;
+}
+.spent-balance {
+  display: flex;
+}
+
 /* add transaction section */
 
 .add-transaction {

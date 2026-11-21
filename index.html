@@ -54,7 +54,7 @@
         <p class="sign">🎯</p>
         <div>
           <p class="balance-name">Monthly Budget</p>
-          <p class="balance-amount">$0.00</p>
+          <p id="monthly-balance-amount" class="balance-amount">$0.00</p>
         </div>
 
       </div>
@@ -64,13 +64,24 @@
 
       <div class="set-budget">
         <h2>Monthly Budget</h2>
-        <button class="set-btn">Set Budget</button>
+        <button id="set-budget" class="set-btn">Set Budget</button>
       </div>
 
       <div class="remaining">
-        <p>Spent: <span class="balance"></span> $0.00
-        </p>
-        <p>Remaining: <span class="balance"></span> $0.00</p>
+
+        <div class="spent-balance">
+          <p>Spent: </p>
+
+          <p id="spent-budget"> $0.00</p>
+
+        </div>
+
+        <div class="remaining-balance">
+          <p>Remaining: </p>
+          <p id="remaining-budget" class="balance"> $0.00</p>
+
+        </div>
+
       </div>
 
       <p class="percent"></p>
